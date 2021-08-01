@@ -2,14 +2,14 @@ package config
 
 import (
 	"flag"
-	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 )
 
 type ConfigInfo struct {
-	Port       string `yaml:"port"`
-	ApiVersion string `yaml:"apiVersion"`
+	Port       string    `yaml:"port"`
+	ApiVersion string    `yaml:"apiVersion"`
+	LogLevel   int `yaml:"logLevel"`
 }
 
 var Config = new(ConfigInfo)
@@ -18,7 +18,6 @@ func init() {
 	var configFilePath string
 	flag.StringVar(&configFilePath, "config", "config/config.yaml", "config file path")
 	flag.Parse()
-	fmt.Println(configFilePath)
 
 	if configFilePath != "" {
 		configBytes, err := ioutil.ReadFile(configFilePath)
