@@ -16,7 +16,7 @@ var Config = new(ConfigInfo)
 
 func init() {
 	var configFilePath string
-	flag.StringVar(&configFilePath, "config", "config/config.yaml", "config file path")
+	flag.StringVar(&configFilePath, "config", "config_files/config.yaml", "config file path")
 	flag.Parse()
 
 	if configFilePath != "" {

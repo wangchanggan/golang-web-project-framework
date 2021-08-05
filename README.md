@@ -22,6 +22,7 @@ It contains router, and handlers which are responsible for parsing paramters.
 
 #### service
 It is responsible for validate paramters and business logic processing, then invokes model layer.
+
 Attention: Never allow use model or dao B through Service A, but Service A to Service B, then Service B invokes model B.
 
 #### model

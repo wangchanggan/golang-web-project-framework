@@ -1,8 +1,8 @@
 package model
 
 import (
-	userDto "golang-web-project-framework/modules/users/service/dto"
-	utilsError "golang-web-project-framework/utils/error"
+	userDto "golang-web-project-framework/src/modules/users/service/dto"
+	"golang-web-project-framework/src/utils"
 	"gopkg.in/mgo.v2/bson"
 	"time"
 )
@@ -21,6 +21,6 @@ func NewUser(userAddReqDto userDto.UserAddReqDto) *User {
 	}
 }
 
-func (user *User) AddUser() (*userDto.UserAddRespDto, *utilsError.Error) {
+func (user *User) AddUser() (*userDto.UserAddRespDto, *utils.Error) {
 	return nil, nil
 }

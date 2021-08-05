@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"golang-web-project-framework/config"
-	usersApi "golang-web-project-framework/modules/users/api"
-	booksApi "golang-web-project-framework/modules/books/api"
+	"golang-web-project-framework/src/config"
+	usersApi "golang-web-project-framework/src/modules/users/api"
+	booksApi "golang-web-project-framework/src/modules/books/api"
 )
 
 func main() {

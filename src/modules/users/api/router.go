@@ -2,8 +2,8 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"golang-web-project-framework/config"
-	"golang-web-project-framework/modules/users/api/handlers"
+	"golang-web-project-framework/src/config"
+	"golang-web-project-framework/src/modules/users/api/handlers"
 )
 
 var usersHandlers = new(handlers.UsersHandlers)

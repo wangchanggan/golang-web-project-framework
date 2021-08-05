@@ -2,7 +2,7 @@ package utils
 
 import (
 	log "github.com/sirupsen/logrus"
-	"golang-web-project-framework/config"
+	"golang-web-project-framework/src/config"
 	"os"
 )
 

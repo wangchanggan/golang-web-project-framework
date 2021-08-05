@@ -1,10 +1,10 @@
 package service
 
 import (
-	"golang-web-project-framework/modules/users/model"
+	"golang-web-project-framework/src/modules/users/model"
 	"sync"
-	"golang-web-project-framework/modules/users/service/dto"
-	utilsError "golang-web-project-framework/utils/error"
+	"golang-web-project-framework/src/modules/users/service/dto"
+	"golang-web-project-framework/src/utils"
 )
 
 var (
@@ -26,6 +26,6 @@ func GetUserServiceInstance() *UsersService {
 	return instance
 }
 
-func (usersService *UsersService) AddUser(userAddReqDto dto.UserAddReqDto) (*dto.UserAddRespDto, *utilsError.Error) {
+func (usersService *UsersService) AddUser(userAddReqDto dto.UserAddReqDto) (*dto.UserAddRespDto, *utils.Error) {
 	return model.NewUser(userAddReqDto).AddUser()
 }

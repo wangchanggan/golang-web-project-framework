@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"golang-web-project-framework/config"
+	"golang-web-project-framework/src/config"
 )
 
 func InitRouter(router *gin.Engine) *gin.Engine {
