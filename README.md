@@ -5,7 +5,7 @@ It makes web project clearer and easier to understand, and ensures the unity of 
 
 
 ## Project Framework
-![image](golang-web-project-framework.png)
+![image](docs/golang-web-project-framework.png)
 
 
 ### Modules
