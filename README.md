@@ -44,7 +44,7 @@ Attention: Never allow use model or dao B through Service A, but Service A to Se
 It indicates concrete instantiated object, which matches with database.
 
 #### Dao
-Encapsulating access to the database: adding, deleting, modifying and querying.Do not involve business logic.
+Encapsulating access to the database: adding, deleting, Updating and querying.Do not involve business logic.
 
 ### Utils 
 Public function part, which can be used by any others.

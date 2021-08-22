@@ -7,14 +7,26 @@ import (
 )
 
 type ConfigInfo struct {
-	Port       string    `yaml:"port"`
-	ApiVersion string    `yaml:"apiVersion"`
-	LogLevel   int `yaml:"logLevel"`
+	Port       string  `yaml:"port"`
+	ApiVersion string  `yaml:"apiVersion"`
+	LogLevel   int     `yaml:"logLevel"`
+	MongoDb    MongoDb `yaml:"mongoDb"`
+}
+
+type MongoDb struct {
+	Host              string `yaml:"host"`
+	Port              string `yaml:"port"`
+	Username          string `yaml:"username"`
+	Password          string `yaml:"password"`
+	MaxPoolSize       uint64 `yaml:"maxPoolSize"`
+	ConnectCtxTimeout int    `yaml:"connectCtxTimeout"`
+	OperateCtxTimeout int    `yaml:"operateCtxTimeout"`
 }
 
 var Config = new(ConfigInfo)
 
 func init() {
+	//testing.Init()
 	var configFilePath string
 	flag.StringVar(&configFilePath, "config", "config_files/config.yaml", "config file path")
 	flag.Parse()

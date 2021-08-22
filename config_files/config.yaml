@@ -1,3 +1,11 @@
 port: ":8080"
 apiVersion: "/api/v1"
 logLevel: 5
+mongoDb:
+  host: "localhost"
+  port: ":27017"
+  username: "root"
+  password: "root"
+  maxPoolSize: 20
+  connectCtxTimeout: 10
+  operateCtxTimeout: 5

@@ -8,6 +8,7 @@ import (
 
 func init() {
 	log.SetOutput(os.Stdout)
+	log.SetReportCaller(true)
 	log.SetLevel(log.Level(config.Config.LogLevel))
 }
 

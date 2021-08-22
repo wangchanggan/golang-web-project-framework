@@ -3,20 +3,25 @@ package utils
 import "fmt"
 
 const (
-	ErrorCode            = "errorCode"
-	ErrorDesc            = "errorDesc"
-	Content              = "content"
+	ErrorCode = "errorCode"
+	ErrorDesc = "errorDesc"
+	Content   = "content"
 )
 
 const (
-	ErrorCodeSuccess = "Success"
-	ErrorCodeParameterError = "ParameterError"
+	ErrorCodeSuccess          = "Success"
+	ErrorCodeParameterError   = "ParameterError"
 	ErrorCodeInvalidParameter = "InvalidParameter"
+	ErrorCodeMissingParameter = "MissingParameter"
+	ErrorCodeInnerError       = "InnerError"
+	ErrorCodeNotFound         = "NotFound"
 )
 
 const (
-	ErrorDescSuccess = "Success"
+	ErrorDescSuccess          = "success"
 	ErrorDescInvalidParameter = "parameter %s is invalid"
+	ErrorDescMissingParameter = "parameter %s is missing"
+	ErrorDescNotFound         = "not found"
 )
 
 type Error struct {
@@ -32,7 +37,14 @@ func NewErrorWithInvalidParameter(param string) *Error {
 	return &Error{ErrorCode: ErrorCodeInvalidParameter, ErrorDesc: fmt.Sprintf(ErrorDescInvalidParameter, param)}
 }
 
-func (error *Error) Error() string {
-	return error.ErrorDesc
+func NewErrorWithMissingParameter(param string) *Error {
+	return &Error{ErrorCode: ErrorCodeMissingParameter, ErrorDesc: fmt.Sprintf(ErrorDescMissingParameter, param)}
 }
 
+func NewErrorWithInnerError(errStr string) *Error {
+	return &Error{ErrorCode: ErrorCodeInnerError, ErrorDesc: errStr}
+}
+
+func NewErrorWithNotFound() *Error {
+	return &Error{ErrorCode: ErrorCodeNotFound, ErrorDesc: ErrorDescNotFound}
+}
